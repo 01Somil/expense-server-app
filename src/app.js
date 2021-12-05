@@ -9,6 +9,13 @@ const app = express();
 dotenv.config();
 dbConnect();
 app.use(express.json());
+
+app.get('/' , (req , res)=>{
+
+   res.json({msg: "Welcome to Expenses Tracker API"});
+
+});
+
 app.use('/api/users',userRoute);
 app.use(notFound);
 app.use(errorHandler);
